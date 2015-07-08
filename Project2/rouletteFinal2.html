@@ -3,11 +3,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Roulette</title>
-<link href="rouletteFinal.css" rel="stylesheet" type="text/css">
+<link href="rouletteFinal2.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <div class="board">
-    <div class="wheel">
+<div class="board">
+  <div class="wheel">
     <div id="outside">
       <div id="level1">
         <div id="level2">
@@ -131,7 +131,17 @@
   </tfoot>
   </table>
 </div>
-<div>
+<div id='betting'>
+	<h2>Place your bets!</h2>
+	<p>Instructions: To place a bet, simply enter the square to bet on followed by a ':' and then the amount you wish to bet.</p>
+	<p>For example, to bet $100 on 2 and $50 on 23, you would enter '2:100 23:50' (Put a space between bets)</p>
+	<p>To bet on the horizontal options at the bottom of the table, use the following codes:</p>
+	<p>1st 12: 1st12, 2nd 12: 2nd12, 3rd 12: 3rd12, 1 to 18: 1to18, 19 to 36: 19to36</p>
+	<p>Even: even, Odd: odd, Red: red, Black: black</p>
+	<form action="bid.php" method='post'>
+		<textarea name='bet' rows="3" cols="50" id='betInput'></textarea>
+		<input type='submit' value='Place Bet!' id='betButton'>
+	</form>
 </div>
 </body>
 </html>

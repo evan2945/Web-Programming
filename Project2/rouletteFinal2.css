@@ -4,7 +4,7 @@ table {
 	color: #FFFFFF;
 	text-align: center;
 	font-size: 14px;
-  empty-cells: hide;
+  	empty-cells: hide;
 }
 
 th {
@@ -18,7 +18,7 @@ tfoot td {
 
 .foot td {
   border-style: solid;
-  border-color: gold;
+  border-color: yellow;
 }
 
 td {
@@ -92,8 +92,8 @@ td {
 }
 
 .board {
-  width: auto;
-  height: 700px;
+  	width: auto;
+  	height: 700px;
 	background-origin: center;
 	border-top: 35px solid #996633;
 	border-bottom: 35px solid #996633;
@@ -419,3 +419,32 @@ span {
   border-radius: 50%;
 }
 
+#betting h2 {
+	width: 40%;
+	text-align: center;
+	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 42px;
+}
+
+#betting p {
+	text-align: center;
+	font-size: 24px;
+}
+
+#betting form {
+	width: 400px;
+	margin: 0 auto;
+}
+
+#betButton {
+	height: 30px;
+	width: 150px;
+	margin-left: 120px;
+}
+
+#betInput {
+	font-size: 24px;
+	margin-left: -150px;
+}

@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>Php output</title>
+		<meta charset="UTF-8">
+	</head>
 	<body>
 		<?php
 			$temp = $_POST["font"];
