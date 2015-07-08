@@ -60,8 +60,9 @@
       </div>
     </div>
 </div>
-<br><br>
   <table>
+  <tr>
+    <caption><font color="black"><h1>Place your bid</h1></font></caption>
     <tr>
       <th rowspan="4"><div id="trapezoid"><br><br><br>
         <br><br><br><br><p id="rzero">0</p><p id="dzero">00</p></div></th>
@@ -129,17 +130,18 @@
     </tr>
   </tfoot>
   </table>
-  <div id='betting'>
-  <h2>Place your bets!</h2>
-  <p>Instructions: To place a bet, simply enter the square to bet on followed by a ':' and then the amount you wish to bet.<br> For example, to bet $100 on 2 and $50 on 23, you would enter '2:100 23:50' (Put a space between bets)<br> To bet on the horizontal options at the bottom of the table, use the following codes:</p>
-  <p>1st 12: 1st12, 2nd 12: 2nd12, 3rd 12: 3rd12, 1 to 18: 1to18, 19 to 36: 19to36</p>
-  <p>Even: even, Odd: odd, Red: red, Black: black</p>
-  <form action="bid.php" method='post'>
-    <textarea name='bet' rows="3" cols="50" id='betInput'></textarea>
-    <input type='submit' value='Place Bet!' id='betButton'>
-  </form>
 </div>
+<div id='betting'>
+	<h2>Place your bets!</h2>
+	<p>Instructions: To place a bet, simply enter the square to bet on followed by a ':' and then the amount you wish to bet.</p>
+	<p>For example, to bet $100 on 2 and $50 on 23, you would enter '2:100 23:50' (Put a space between bets)</p>
+	<p>To bet on the horizontal options at the bottom of the table, use the following codes:</p>
+	<p>1st 12: 1st12, 2nd 12: 2nd12, 3rd 12: 3rd12, 1 to 18: 1to18, 19 to 36: 19to36</p>
+	<p>Even: even, Odd: odd, Red: red, Black: black</p>
+	<form action="bid.php" method='post'>
+		<textarea name='bet' rows="3" cols="50" id='betInput'></textarea>
+		<input type='submit' value='Place Bet!' id='betButton'>
+	</form>
 </div>
-
 </body>
 </html>

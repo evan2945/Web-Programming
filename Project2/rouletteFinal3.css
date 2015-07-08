@@ -92,8 +92,8 @@ td {
 }
 
 .board {
-  width: auto;
-  height: 800px;
+  	width: auto;
+  	height: 700px;
 	background-origin: center;
 	border-top: 35px solid #996633;
 	border-bottom: 35px solid #996633;
@@ -108,10 +108,10 @@ td {
 
 .wheel {
 	float: left;
-	border-top: 75px solid #003300;
-	border-bottom: 15px solid #003300;
-	border-left: 75px solid #003300;
-	border-right: 15px solid #003300;
+	border-top: 50px solid #003300;
+	border-bottom: 50px solid #003300;
+	border-left: 50px solid #003300;
+	border-right: 50px solid #003300;
 	border-top-left-radius: 75px;
 	border-top-right-radius: 75px;
 	border-bottom-left-radius: 75px;
@@ -419,22 +419,6 @@ span {
   border-radius: 50%;
 }
 
-#bets {
-  width: 30%;
-  text-align: center;
-  border: 1px solid black;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 30px;
-  color: lime;
-}
-
-#betting {
-  float: right;
-  color: lime;
-  margin-right: 70px;
-}
-
 #betting h2 {
 	width: 40%;
 	text-align: center;
@@ -446,7 +430,7 @@ span {
 
 #betting p {
 	text-align: center;
-	font-size: 22px;
+	font-size: 24px;
 }
 
 #betting form {
