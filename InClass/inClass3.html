@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>In Class 3</title>
+		<script type='text/javascript' src='inClass3.js'></script>
+		<style>
+			form { 
+				display: table;    
+			}
+			.container { 
+				display: table-row;  
+			}
+			label { 
+				display: table-cell; 
+			}
+			input { 
+				display: table-cell;
+			}
+			#submit {
+				margin-left 25px;
+			}
+			
+			.message {
+				color: red;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+			<form name="inClass3" id='inClass3'>
+				
+				<div class='container'>
+					<label></label>
+					<p id='idErrorMessage' class='message'></p>
+				</div>
+				<div class='container'>
+					<label id='id_label' for='id'>ID:</label>
+					<input type='text' name='id' id='id'><br>
+				</div>
+			
+				<div class='container'>
+					<label></label>
+					<p id='firstErrorMessage' class='message'></p>
+				</div>
+				<div class='container'>
+					<label id='first_label' for='first'>First Name:</label>
+					<input type="text" name="first" id='first'><br>
+				</div>
+				
+				<div class='container'>
+					<label></label>
+					<p id='lastErrorMessage' class='message'></p>
+				</div>
+				<div class='container'>
+					<label id='last_label' for='last'>Last Name:</label>
+					<input type="text" name="last" id='last'><br>
+				</div>
+				<div class='container'>
+					<label></label>
+					<input type='submit' value='Add' id='submit'  onclick="return checkCompleteness();"/>
+				</div>
+				<br>
+				<p id='userIDout'></p>
+				<p id='firstOut'></p>
+				<p id='lastOut'></p>
+			</form>
+	</body>
+</html>
