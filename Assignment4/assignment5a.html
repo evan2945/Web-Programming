@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assignment 5</title>
+		<meta charset='UTF-8'/>
+		<style>
+			#output {
+				width: 100%;
+				margin: 300px auto 0 auto;
+				text-align: center;
+			}
+			#next {
+				width: 100%;
+				margin: 100px auto 0 auto;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='output'></div>
+		<script>
+			var d = new Date();
+			var m = d.getMinutes();
+			var h = d.getHours();
+			if(m == 1){
+				var minute = 'minute';
+			}else {
+				var minute = 'minutes';
+			}
+			switch(h){
+				case 1:
+				case 21:
+					var hour = 'st';
+					break;
+				case 2:
+				case 22:
+					var hour = 'nd';
+					break;
+				case 3:
+				case 23:
+					var hour = 'rd';
+					break;
+				default:
+					var hour = 'th';
+			}
+			
+			document.getElementById('output').innerHTML='The time is ' + m + ' ' + minute + ' past the ' + h +  hour + ' hour';
+		</script>
+		<div id='next'>
+			<a href='assignment5b.html'>Part B</a><br>
+			<a href='assignment5c.html'>Part C</a>
+		</div>
+	</body>
+</html>
