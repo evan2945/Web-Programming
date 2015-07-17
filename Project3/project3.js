@@ -1,3 +1,17 @@
+var grid = [[0, 0, 0, 0, 0, 0],
+			[0, "first", "second", "third", "fourth", 0],
+			[0, "fifth", "sixth", "seventh", "eigth", 0],
+			[0, "ninth", "tenth", "eleventh", "twelfth", 0],
+			[0, "thirteenth", "fourteenth", "fifteenth", "zero", 0],
+			[0, 0, 0, 0, 0, 0]];
+			
+var tempGrid = [[0, 0, 0, 0, 0, 0],
+			[0, "first", "second", "third", "fourth", 0],
+			[0, "fifth", "sixth", "seventh", "eigth", 0],
+			[0, "ninth", "tenth", "eleventh", "twelfth", 0],
+			[0, "thirteenth", "fourteenth", "fifteenth", "zero", 0],
+			[0, 0, 0, 0, 0, 0]];
+
 $(document).ready(function(){
 	var background = $("div input[type='radio']:checked").val();
 	$("input[name=image]").click(function(){
@@ -43,4 +57,48 @@ $(document).ready(function(){
     		$(".row4 > div").addClass("dd");
     	}
 	});
-})
+	
+ 	$(document).on('click', '.handle', function() {
+ 		var check = this.id;
+ 		var a = "#" + this.id;
+ 		if(checkMove(check)){
+	 		div1 = $(a);
+	 		div2 = $('#zero');
+	 		tdiv1 = div1.clone();
+	 		tdiv2 = div2.clone();
+	 		div1.replaceWith(tdiv2);
+	 		div1.removeClass()
+	 		div2.replaceWith(tdiv1);
+	 	}
+ 	});
+});
+
+function checkMove(check) {
+	for(var i = 0; i < 6; i++){
+		for(var j = 0; j < 6; j++){
+			if(tempGrid[i][j] == check){
+				if(tempGrid[i-1][j] == "zero"){
+					tempGrid[i][j] = "zero";""
+					tempGrid[i-1][j] = check;
+					return true;
+				}else if(tempGrid[i][j-1] == "zero"){
+					tempGrid[i][j] = "zero";
+					tempGrid[i][j-1] = check;
+					return true;
+ 				}else if(tempGrid[i+1][j] == "zero"){
+ 					tempGrid[i][j] = "zero";
+ 					tempGrid[i+1][j] = check;
+ 					return true;
+ 				}else if(tempGrid[i][j+1] == "zero"){
+ 					tempGrid[i][j] = "zero";
+ 					tempGrid[i][j+1] = check;
+ 					return true;
+ 				}
+			}
+		}
+	}
+	return false;
+}
+
+
+

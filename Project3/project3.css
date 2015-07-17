@@ -9,7 +9,7 @@
 
 #para1 {
 	width: 100%;
-	margin: 30px 0px 0px 350px;
+	margin: 20px 0px 0px 225px;
 }
 
 #para1 p {
@@ -19,7 +19,7 @@
 
 #para2 {
 	width: 100%;
-	margin: 30px 0px 0px 350px;
+	margin: 20px 0px 0px 225px;
 }
 
 #para2 p {
@@ -32,7 +32,6 @@
 	height: 400px;
 	margin: 25px auto;
 	white-space: nowrap;
-	
 }
 
 .row1 div {
@@ -43,6 +42,7 @@
 	border-collapse:collapse;
 	text-align: center;
 	line-height: 96px;
+	vertical-align: top;
 }
 
 .row2 div {
@@ -53,6 +53,7 @@
 	border-collapse:collapse;
 	text-align: center;
 	line-height: 96px;
+	vertical-align: top;
 }
 
 .row3 div {
@@ -63,6 +64,7 @@
 	border-collapse:collapse;
 	text-align: center;
 	line-height: 96px;
+	vertical-align: top;
 }
 
 .row4 div {
@@ -73,289 +75,295 @@
 	border-collapse:collapse;
 	text-align: center;
 	line-height: 96px;
+	vertical-align: top;
 }
 
-.a:nth-child(1){
+#zero {
+	background-image: none;
+	border: 2px solid transparent;
+}
+
+.a#first{
 	background-position: 400px 0px;
 }
 
-.a:nth-child(2) {
+.a#second {
 	background-position: 300px 0px;
 }
 
-.a:nth-child(3) {
+.a#third {
 	background-position: 200px 0px;
 }
 
-.a:nth-child(4) {
+.a#fourth {
 	background-position: 100px 0px;
 }
 
-.b:nth-child(1) {
+.b#fifth {
 	background-position: 400px -100px;
 }
 
-.b:nth-child(2) {
+.b#sixth {
 	background-position: 300px -100px;
 }
 
-.b:nth-child(3) {
+.b#seventh {
 	background-position: 200px -100px;
 }
 
-.b:nth-child(4) {
+.b#eigth {
 	background-position: 100px -100px;
 }
 
-.c:nth-child(1) {
+.c#ninth {
 	background-position: 400px -200px;
 }
 
-.c:nth-child(2) {
+.c#tenth {
 	background-position: 300px -200px;
 }
 
-.c:nth-child(3) {
+.c#eleventh {
 	background-position: 200px -200px;
 }
 
-.c:nth-child(4) {
+.c#twelfth {
 	background-position: 100px -200px;
 }
 
-.d:nth-child(1) {
+.d#thirteenth {
 	background-position: 400px -300px;
 }
 
-.d:nth-child(2) {
+.d#fourteenth {
 	background-position: 300px -300px;
 }
 
-.d:nth-child(3) {
+.d#fifteenth {
 	background-position: 200px -300px;
 }
 
-.ab:nth-child(1){
+.ab#first{
 	background-position: 0px 0px;
 	color: white;
 }
 
-.ab:nth-child(2) {
+.ab#second {
 	background-position: -100px 0px;
 	color: white;
 }
 
-.ab:nth-child(3) {
+.ab#third {
 	background-position: -200px 0px;
 	color: white;
 }
 
-.ab:nth-child(4) {
+.ab#fourth {
 	background-position: -300px 0px;
 	color: white;
 }
 
-.bb:nth-child(1) {
+.bb#fifth {
 	background-position: 0px -100px;
 	color: white;
 }
 
-.bb:nth-child(2) {
+.bb#sixth {
 	background-position: -100px -100px;
 	color: white;
 }
 
-.bb:nth-child(3) {
+.bb#seventh {
 	background-position: -200px -100px;
 	color: white;
 }
 
-.bb:nth-child(4) {
+.bb#eigth {
 	background-position: -300px -100px;
 	color: white;
 }
 
-.cb:nth-child(1) {
+.cb#ninth {
 	background-position: 0px -200px;
 	color: white;
 }
 
-.cb:nth-child(2) {
+.cb#tenth {
 	background-position: -100px -200px;
 	color: white;
 }
 
-.cb:nth-child(3) {
+.cb#eleventh {
 	background-position: -200px -200px;
 	color: white;
 }
 
-.cb:nth-child(4) {
+.cb#twelfth {
 	background-position: -300px -200px;
 	color: white;
 }
 
-.db:nth-child(1) {
+.db#thirteenth {
 	background-position: 0px -300px;
 	color: white;
 }
 
-.db:nth-child(2) {
+.db#fourteenth {
 	background-position: -100px -300px;
 	color: white;
 }
 
-.db:nth-child(3) {
+.db#fifteenth {
 	background-position: -200px -300px;
 	color: white;
 }
 
-.ac:nth-child(1){
+.ac#first{
 	background-position: -350px -50px;
 	color: white;
 }
 
-.ac:nth-child(2) {
+.ac#second {
 	background-position: -450px -50px;
 	color: white;
 }
 
-.ac:nth-child(3) {
+.ac#third {
 	background-position: -550px -50px;
 	color: white;
 }
 
-.ac:nth-child(4) {
+.ac#fourth {
 	background-position: -650px -50px;
 	color: white;
 }
 
-.bc:nth-child(1) {
+.bc#fifth {
 	background-position: -350px -150px;
 	color: white;
 }
 
-.bc:nth-child(2) {
+.bc#sixth {
 	background-position: -450px -150px;
 	color: white;
 }
 
-.bc:nth-child(3) {
+.bc#seventh {
 	background-position: -550px -150px;
 	color: white;
 }
 
-.bc:nth-child(4) {
+.bc#eigth {
 	background-position: -650px -150px;
 	color: white;
 }
 
-.cc:nth-child(1) {
+.cc#ninth {
 	background-position: -350px -250px;
 	color: white;
 }
 
-.cc:nth-child(2) {
+.cc#tenth {
 	background-position: -450px -250px;
 	color: white;
 }
 
-.cc:nth-child(3) {
+.cc#eleventh {
 	background-position: -550px -250px;
 	color: white;
 }
 
-.cc:nth-child(4) {
+.cc#twelfth {
 	background-position: -650px -250px;
 	color: white;
 }
 
-.dc:nth-child(1) {
+.dc#thirteenth {
 	background-position: -350px -350px;
 	color: white;
 }
 
-.dc:nth-child(2) {
+.dc#fourteenth {
 	background-position: -450px -350px;
 	color: white;
 }
 
-.dc:nth-child(3) {
+.dc#fifteenth {
 	background-position: -550px -350px;
 	color: white;
 }
 
-.ad:nth-child(1){
+.ad#first{
 	background-position: -400px -150px;
 	color: white;
 }
 
-.ad:nth-child(2) {
+.ad#second {
 	background-position: -500px -150px;
 	color: white;
 }
 
-.ad:nth-child(3) {
+.ad#third {
 	background-position: -600px -150px;
 	color: white;
 }
 
-.ad:nth-child(4) {
+.ad#fourth {
 	background-position: -700px -150px;
 	color: white;
 }
 
-.bd:nth-child(1) {
+.bd#fifth {
 	background-position: -400px -250px;
 	color: white;
 }
 
-.bd:nth-child(2) {
+.bd#sixth {
 	background-position: -500px -250px;
 	color: white;
 }
 
-.bd:nth-child(3) {
+.bd#seventh {
 	background-position: -600px -250px;
 	color: white;
 }
 
-.bd:nth-child(4) {
+.bd#eigth {
 	background-position: -700px -250px;
 	color: white;
 }
 
-.cd:nth-child(1) {
+.cd#ninth {
 	background-position: -400px -350px;
 	color: white;
 }
 
-.cd:nth-child(2) {
+.cd#tenth {
 	background-position: -500px -350px;
 	color: white;
 }
 
-.cd:nth-child(3) {
+.cd#eleventh {
 	background-position: -600px -350px;
 	color: white;
 }
 
-.cd:nth-child(4) {
+.cd#twelfth {
 	background-position: -700px -350px;
 	color: white;
 }
 
-.dd:nth-child(1) {
+.dd#thirteenth {
 	background-position: -400px -450px;
 	color: white;
 }
 
-.dd:nth-child(2) {
+.dd#fourteenth {
 	background-position: -500px -450px;
 	color: white;
 }
 
-.dd:nth-child(3) {
+.dd#fifteenth {
 	background-position: -600px -450px;
 	color: white;
 }
@@ -394,7 +402,7 @@
 }
 .choice1 {
 	float: left;
-	margin: 30px 50px 30px 250px;
+	margin: 30px 50px 30px 50px;
 }
 
 .choice2 {
