@@ -11,6 +11,9 @@ var tempGrid = [[0, 0, 0, 0, 0, 0],
 			[0, "ninth", "tenth", "eleventh", "twelfth", 0],
 			[0, "thirteenth", "fourteenth", "fifteenth", "zero", 0],
 			[0, 0, 0, 0, 0, 0]];
+			
+var shuffledBoard = [];
+var prevChoice;
 
 $(document).ready(function(){
 	var background = $("div input[type='radio']:checked").val();
@@ -62,6 +65,7 @@ $(document).ready(function(){
  		var check = this.id;
  		var a = "#" + this.id;
  		if(checkMove(check)){
+ 			shuffledBoard.push(check);
 	 		div1 = $(a);
 	 		div2 = $('#zero');
 	 		tdiv1 = div1.clone();
@@ -100,5 +104,113 @@ function checkMove(check) {
 	return false;
 }
 
+function shuffle() {
+	//how many times we want to shuffle the tiles
+	var loops = 20;
+	//loop for that many times
+	while(loops > 0){
+		//nested loop to cycle through our grid array
+		for(var i = 0; i < 6; i++){
+			for(var j = 0; j < 6; j++){
+				//this will hold our possible moves for our blank square
+				var choices = [];
+				//this will hold our associative array keys
+				var tem = [];
+				//checks to see when we have found our blank square
+				if(tempGrid[i][j] == "zero"){
+					//checks to makes sure we are looking at our border padding of 0's
+					//each if statement check the possible neighbors of zero and stores them
+					//in an associative array. The keys of the associative array will be used
+					//later to figure out what piece to switch
+					if(tempGrid[i-1][j] !== 0 && tempGrid[i-1][j] != prevChoice){
+						choices[0] = tempGrid[i-1][j];
+						tem.push(0);
+					}
+					if(tempGrid[i][j-1] !== 0 && tempGrid[i][j-1] != prevChoice){
+						choices[1] = tempGrid[i][j-1];
+						tem.push(1);
+	 				}
+	 				if(tempGrid[i+1][j] !== 0 && tempGrid[i+1][j] != prevChoice){
+	 					choices[2] = tempGrid[i+1][j];
+	 					tem.push(2);
+	 				}
+	 				if(tempGrid[i][j+1] !== 0 &&tempGrid[i][j+1] != prevChoice){
+	 					choices[3] = tempGrid[i][j+1];
+	 					tem.push(3);
+	 				}
+	 				//picking a random key to switch with zero
+	 				var rand = tem[Math.floor(Math.random() * tem.length)];
+	 				//div1 one will be the selected tile
+	 				div1 = choices[rand];
+	 				prevChoice = div1;
+	 				shuffledBoard.push(div1);
+	 				//div2 will be our zero tile
+			 		div2 = "zero";
+			 		//the newDivs are jQuery objects that will be used to clone and switch later
+			 		newDiv1 = $('#' + div1);
+			 		newDiv2 = $('#' + div2);
+			 		//This places our zero array element at it's new location, replacing the tile it switches with
+			 		tempGrid[i][j] = div1;
+			 		//we need to check our keys to figure out which array element to switch with zero
+			 		if(rand == 0){
+			 			tempGrid[i-1][j] = div2;
+			 		}else if(rand == 1){
+			 			tempGrid[i][j-1] = div2;
+			 		}else if(rand == 2){
+			 			tempGrid[i+1][j] = div2;
+			 		}else if(rand == 3){
+			 			tempGrid[i][j+1] = div2;
+			 		}
+			 		//now we clone the two divs and swap them with each other
+			 		tdiv1 = newDiv1.clone();
+			 		tdiv2 = newDiv2.clone();
+			 		newDiv1.replaceWith(tdiv2);
+			 		newDiv1.removeClass();
+			 		newDiv2.replaceWith(tdiv1);
+			 		loops -= 1; // decrease out loop counter
+			 		i = 7; //break out of outer loop
+			 		j = 7; //break out of inner loop
+				}
+			}
+		}
+	}
+}
 
+
+function solve(){
+	/*
+	for(var i = shuffledBoard.length - 1; i >= 0; i--){
+		alert("i: " + i);
+		setTimeout(function(){
+			var tempDiv1 = $("#" + shuffledBoard[i]);
+			var tempDiv2 = $("#zero");
+			var tdiv1 = tempDiv1.clone();
+			var tdiv2 = tempDiv2.clone();
+			tempDiv1.replaceWith(tdiv2);
+			tempDiv1.removeClass();
+			tempDiv2.replaceWith(tdiv1);
+		}, 1000, i);
+		
+				
+	}*/
+	var counter = 0;
+	var i = shuffledBoard.length - 1;
+	
+	var k = setInterval(function(){
+		var tempDiv1 = $("#" + shuffledBoard[i]);
+		var tempDiv2 = $("#zero");
+		var tdiv1 = tempDiv1.clone();
+		var tdiv2 = tempDiv2.clone();
+		tempDiv1.replaceWith(tdiv2);
+		tempDiv1.removeClass();
+		tempDiv2.replaceWith(tdiv1);
+		i -= 1;
+		counter += 1;
+		if(counter == shuffledBoard.length){
+			clearInterval(k);
+		}
+	}, 1000);
+	
+		
+}
 

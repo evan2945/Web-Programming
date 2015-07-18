@@ -390,6 +390,11 @@
 	text-align: center;
 }
 
+#check {
+	margin: 0 auto;
+	text-align: center;
+}
+
 #shuffle {
 	margin: 0 auto;
 }
