@@ -78,6 +78,7 @@ $(document).ready(function(){
         $(this).removeClass("handle_hover");
     });
 
+
     $(document).on('click', '.handle', function() {
         $(this).removeClass("handle_hover");
         var check = this.id;
@@ -122,15 +123,18 @@ function checkMove(check) {
                     tempGrid[i][j] = "zero";
                     tempGrid[i-1][j] = check;
                     return true;
-                }else if(tempGrid[i][j-1] == "zero"){
+                }
+                if(tempGrid[i][j-1] == "zero"){
                     tempGrid[i][j] = "zero";
                     tempGrid[i][j-1] = check;
                     return true;
-                }else if(tempGrid[i+1][j] == "zero"){
+                }
+                if(tempGrid[i+1][j] == "zero"){
                     tempGrid[i][j] = "zero";
                     tempGrid[i+1][j] = check;
                     return true;
-                }else if(tempGrid[i][j+1] == "zero"){
+                }
+                if(tempGrid[i][j+1] == "zero"){
                     tempGrid[i][j] = "zero";
                     tempGrid[i][j+1] = check;
                     return true;
@@ -147,11 +151,14 @@ function unchangedCheck(check) {
             if(tempGrid[i][j] == check){
                 if(tempGrid[i-1][j] == "zero"){
                     return true;
-                }else if(tempGrid[i][j-1] == "zero"){
+                }
+                if(tempGrid[i][j-1] == "zero"){
                     return true;
-                }else if(tempGrid[i+1][j] == "zero"){
+                }
+                if(tempGrid[i+1][j] == "zero"){
                     return true;
-                }else if(tempGrid[i][j+1] == "zero"){
+                }
+                if(tempGrid[i][j+1] == "zero"){
                     return true;
                 }
             }
@@ -162,7 +169,9 @@ function unchangedCheck(check) {
 
 function shuffle(diff) {
     //reset clock and number of moves
-    start = count = moves = 0;
+    start = 0;
+    moves = 0;
+    count = 0;
     //how many times we want to shuffle the tiles
     var loops = diff;
     document.getElementById('image1').style.visibility='hidden';
@@ -251,7 +260,8 @@ function solve(){
         counter += 1;
         if(counter == shuffledBoard.length){
             shuffledBoard = [];
-            tempGrid = grid;
+            tempGrid = [];
+            tempGrid = grid.splice(0);
             clearInterval(k);
         }
     }, 1000);
@@ -308,3 +318,4 @@ function getSol() {
 function refresh() {
     location.reload();
 }
+
