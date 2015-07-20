@@ -311,10 +311,6 @@ function getDiff() {
     shuffle(difficulty);
 }
 
-function getSol() {
-    solve();
-}
-
 function refresh() {
     location.reload();
 }

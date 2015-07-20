@@ -410,8 +410,8 @@ span {
 
 #options {
 	width: 100%;
-	margin: 0 auto;
-	text-align: left;
+	margin: auto;
+	text-align: center;
 }
 
 .choices {
@@ -419,7 +419,9 @@ span {
 	width: 350px;
 	padding: 10px 10px 10px 10px;
 	display: inline-block;
+	text-align: left;
 }
+
 
 .dropdown option {
 	text-align: center;
@@ -479,5 +481,6 @@ img {
 }
 
 #icons p{
-    display: inline-block;
+    float: right;
+    clear: left;
 }
