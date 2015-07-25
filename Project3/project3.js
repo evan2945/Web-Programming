@@ -264,7 +264,7 @@ function solve(){
             tempGrid = grid.splice(0);
             clearInterval(k);
         }
-    }, 1000);
+    }, 500);
 
 
 }
