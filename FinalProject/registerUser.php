@@ -40,6 +40,8 @@
 					    $first = $_POST['new_first'];
 						$email = $_POST['new_email'];
 						$last = $_POST['new_last'];
+						$salt = '834qu@J*';
+						$token = md5($salt . $passwd);
 					    
 					    function Register($user, $token, $first, $last, $email) {
 					        if(!empty($_POST['new_user'])){
@@ -62,7 +64,7 @@
 					    }
 					    
 					    if(isset($_POST['signupform'])){
-					        Register($user, $passwd, $first, $last, $email);
+					        Register($user, $token, $first, $last, $email);
 					    }
 					    
 					    mysql_close($conn);

@@ -37,6 +37,8 @@
 						
 						$user = $_POST['username'];
 					    $passwd = $_POST['password'];
+						$salt = '834qu@J*';
+						$token = md5($salt . $passwd);
 					    
 					    function Login($user, $token) {
 					        if(!empty($_POST['username'])){
@@ -55,7 +57,7 @@
 					    }
 					    
 					    if(isset($_POST['signin'])){
-					        Login($user, $passwd);
+					        Login($user, $token);
 					    }
 					    
 					    mysql_close($conn);
