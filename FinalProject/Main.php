@@ -70,15 +70,15 @@
 </div> <!-- Carousel -->  
 
   <div class="row">
-    <div class="col-lg-3 boxes" id="men">
+    <div class="col-lg-4 boxes" id="men">
       <h3>Men's</h3>
       <p>This is just a place holder, we should think up around 3-4 lines of something funny to put here</p>
     </div>
-    <div class="col-lg-3 boxes" id="women">
+    <div class="col-lg-4 boxes" id="women">
       <h3>Women's</h3>
       <p>This is just a place holder, we should think up around 3-4 lines of something funny to put here</p>
     </div>
-    <div class="col-lg-3 boxes" id="children">
+    <div class="col-lg-4 boxes" id="children">
       <h3>Children</h3>        
       <p>This is just a place holder, we should think up around 3-4 lines of something funny to put here</p>
     </div>

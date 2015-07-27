@@ -7,9 +7,9 @@
 		            <li class="dropdown">
 		              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop by Category <span class="caret"></span></a>
 		              <ul class="dropdown-menu">
-		                <li><a href="#">Men\'s Apparel</a></li>
-		                <li><a href="#">Women\'s Apparel</a></li>
-		                <li><a href="#">Children\'s Apparel</a></li>
+		                <li><a href="searchCategory.php?param1=Men">Men\'s Apparel</a></li>
+		                <li><a href="searchCategory.php?param1=Women">Women\'s Apparel</a></li>
+		                <li><a href="searchCategory.php?param1=Children">Children\'s Apparel</a></li>
 		                <li role="separator" class="divider"></li>
 		                <li><a href="#">Find Something Random!</a></li>
 		                <li role="separator" class="divider"></li>

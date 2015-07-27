@@ -45,13 +45,13 @@
 					    
 					    function Register($user, $token, $first, $last, $email) {
 					        if(!empty($_POST['new_user'])){
-					            $query = mysql_query("SELECT * FROM Customers WHERE User_Name='$user'") or die(mysql_error());
-					            $row = mysql_fetch_array($query);
+					            $query = @mysql_query("SELECT * FROM Customers WHERE User_Name='$user'") or die(@mysql_error());
+					            $row = @mysql_fetch_array($query);
 					            if(!empty($row['User_Name'])){
 					                echo "<h2 class='regResult'>Sorry, this username is already in use! Please retry.</h2>";
 					            } else {
 					                $query1 = "INSERT INTO Customers (First_Name, Last_Name, Email, User_Name, Password) VALUES ('$first', '$last', '$email', '$user', '$token')";
-					                if(mysql_query($query1)){
+					                if(@mysql_query($query1)){
 										$_SESSION['eid'] = $user;
 										$_SESSION['loggedin'] = true;
 										$_SESSION['name'] = $first;
@@ -67,7 +67,7 @@
 					        Register($user, $token, $first, $last, $email);
 					    }
 					    
-					    mysql_close($conn);
+					    @mysql_close($conn);
 					?>
 			 	</div>
 			 </div>

@@ -2,7 +2,7 @@
 	session_start();
 	include_once('utilities.php');
 	include('connection.php');
-	$keyword = fetch_get_var('search');
+	$keyword = $_GET['param1'];
 	$page_title = "Results for $keyword";
 ?>
 
@@ -33,7 +33,7 @@
 	  } else {
 	  	  include 'menu_unauthenticated.php';
 	  }
-		    $search = $_POST['search'];
+		    $search = $_GET['param1'];
 		    echo "Searching for '$search'<br>";
 		    echo 	'<!--left side start here-->
         
@@ -49,6 +49,7 @@
 ?>
 
     <!--right side start here-->
+        <section>
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 right_div">
            <div class="right_product_area">
                 <div class="right_product_area_product_cart_faq">
@@ -112,7 +113,6 @@
                                             </div>-->
           	</div>
         </div>
-    </div>
 	</section>
 		<!--right side end here-->
 
