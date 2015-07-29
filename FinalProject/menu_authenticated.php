@@ -1,4 +1,17 @@
 <?php
+	
+	function get_badge($user){
+		$sql = "SELECT * FROM Orders";
+		$result = @mysql_query($sql);
+		$i = 0;
+		while($row = @mysql_fetch_array($result)) {
+			if($row['User_Name'] == $user){
+				$i++;
+			}
+		}
+		return $i;
+	}
+
 	echo '<nav class="navbar navbar-default">
   			 <div class="container-fluid">
   
@@ -23,7 +36,7 @@
 		        </form>
 		      <ul class="nav navbar-nav navbar-right">
 		        <li><a href="Main.php">Home  <span class="glyphicon glyphicon-home" aria-hidden="true"></span> 
-		        <li><a href="#">Cart  <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>  <span class="badge" id="loot">0</span></a></li>
+		        <li><a href="cart.php">Cart  <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>  <span class="badge" id="loot">'.get_badge($_SESSION['eid']).'</span></a></li>
 		        <li><a href="#">Welcome '. $_SESSION['name'] . '!</a></li>
 		        <li><a href="logout.php">Log Out</a></li>
 		      </ul>

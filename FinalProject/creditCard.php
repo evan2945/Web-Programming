@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	ini_set('session.cache_limiter','public');
+	session_cache_limiter(false);
 ?>
 <!DOCTYPE html>
 	<html lang="en">
@@ -45,7 +47,7 @@
   						<div class="ccv">CCV</div>
   					</div>
   					<br>
-  					<form action="submitPayment.php" method="post" class="ccInput" accept-charset="UTF-8">
+  					<form action="payment.php" method="post" class="ccInput" accept-charset="UTF-8">
   						<input id="ccNumberIn" name="ccNumberIn" type="text" placeholder="Card Number"><br>
   						<input id="fullNameIn" name="fullNameIn" type="text" placeholder="Full Name"><br>
   						<input id="expIn" name="expIn" type="text" placeholder="Exp"><br>

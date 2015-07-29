@@ -33,22 +33,9 @@
 		                                       <h5>'.$row['Department'].'</h5>
 		                                        <form method="get" action="details.php" name="ProductDetails">
 		                                        <input type="hidden"  value="'.$row['SKU'].'" name="chosen_product">
-		                                       		<h4 class="price">
-		                                       			<button class="btn_cus" type="submit" style="background-color: #008A00">Add to Cart</button>
+		                                       		<h4 class="price">		                                       		
 		                                      			<button class="btn_cus" type="submit">View Product</button></h4>
-		                                       </form>
-		                                       <div class="dropdown">
-												  <button class="btn btn-default dropdown-toggle sizeGroup" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-												    Sizes
-												    <span class="caret"></span>
-												  </button>
-												  <ul class="dropdown-menu sizeDrop" aria-labelledby="dropdownMenu1">
-												    <li class="sizes"><a href="#">Small</a></li>
-												    <li class="sizes"><a href="#">Medium</a></li>
-												    <li class="sizes"><a href="#">Large</a></li>
-												    <li class="sizes"><a href="#">X Large</a></li>
-												  </ul>
-												</div>
+		                                       </form>		                                    
 	                                     	</div>
 	                                    </div>                                    
 		                           </li>
@@ -58,7 +45,7 @@
 		}
 	}
 
-	function return_product($pro) {;
+	function return_product($use, $pro) {;
 		$sql = "SELECT * FROM Inventory WHERE SKU = '$pro' ORDER BY Price";
 		//Testing purposes only.
 		//echo $sql;
@@ -67,17 +54,24 @@
 	    	echo '
 
                             <img src="'.$row['Image'].'" alt="">
-                                
+                                  
                                 </div>
                                 <div class="slider_div_right">
                                     <h4>Item: '.$row['Name'].'</h4>
-                                    <form method="get" action="AddToCart" name="AddToCart">
-									<input type="hidden"  value='.$row['SKU'].' name="chosen_product">
-                                    <input type ="submit" class="btn btn-success_product" value="Add to Cart"/>
+                                    <form method="post" action="updateCart.php" name="AddToCart">
+									<input type="hidden" value='.$row['SKU'].' name="chosen_product">
+									<input type="hidden" value='.$_SESSION['eid'].' name="chosen_user">
+									'.$_SESSION['eid'].'
+                                    <input type ="submit" class="btn btn-success_product" 
+                                    value="Add to Cart" name="submit"/>
                                     </form>
                                     <h5>Price: <b>$'.$row['Price'].'</b></h5>
                                     <p>Department: '.$row['Department'].' </p>
                                 </div>
+                                <input type="radio" name="sizes" value="0">Small
+                                <input type="radio" name="sizes" value="1">Medium
+                                <input type="radio" name="sizes" value="2">Large
+                                <input type="radio" name="sizes" value="3">X Large
                                	<div class="clearfix"></div>
                                 <div class="product_description des_title">
                                     <p class="heading_wibr">Description</p>
@@ -86,13 +80,31 @@
 		}
 	}
 
-	function return_cart($userName) {;
-		$sql = "SELECT * FROM inventory, orders WHERE Cart = '$userName' ORDER BY Price";
+	function return_cart($userName) {
+		$sql = "SELECT * FROM Inventory ORDER BY SKU";
 		//Testing purposes only.
 		//echo $sql;
 		$result = @mysql_query($sql);
+		$sql1 = "SELECT * FROM Orders ORDER BY SKU";
+		$result1 = @mysql_query($sql1);
+		$i = @mysql_num_rows(@mysql_query("SELECT * FROM Orders"));
+		//echo $i."<br>";
+		$index = 0;
+		$tableInfo = array();
+	    while($row1 = @mysql_fetch_array($result1)) {
+	    	$tableInfo[$index] = $row1;
+	    	$index++;
+	    }
+	    /* TESTING PURPOSES ONLY!
+	    for($j = 0; $j < $i; $j++){
+	    	echo $tableInfo[$j]['SKU']." ";
+	    	echo $tableInfo[$j]['User_Name']."<br>";
+	    }
+	    */
 	    while($row = @mysql_fetch_array($result)) {
-	    	echo '
+	    	for($j = 0; $j < $i; $j++) {
+	    		if(($userName == $tableInfo[$j]['User_Name']) && ($row['SKU'] == $tableInfo[$j]['SKU'])) {
+	    				echo '
                        		<ul>
 								<li>'.
 			                     	'<img src="'.$row['Image'].'" height="170" width="130">
@@ -104,8 +116,9 @@
 	                                       <p class="listing_description">'.$row['Description'].'</p>
 	                                       <div class="left_pro_footer">
 		                                       <h5>'.$row['Department'].'</h5>
-		                                        <form method="get" action="cart.php" name="ProductDetails">
-		                                        <input type="hidden"  value="'.$row['SKU'].'" name="chosen_product">
+		                                        <form method="post" action="updateCart.php" name="ProductDetails">
+		                                        <input type="hidden"  value="'.$row['SKU'].'" name="remove_product">
+		                                        <input type="hidden" value='.$_SESSION['eid'].' name="chosen_user">
 		                                       		<h4 class="price">
 		                                      			<button class="btn_cus" type="submit">Remove Product</button></h4>
 		                                       </form>
@@ -113,26 +126,45 @@
 	                                    </div>                                    
 		                           </li>
                            </ul>
-	    	';
-		}
+	    			';
+	    		}
+	    	}
+	    }
+		echo '
+			<form method="post" action="creditCard.php" name="checkout">
+				<h4 class="price">
+					<button class="btn_cus" type="submit">Checkout!</button>
+				</h4>
+			</form>
+		';
 	}
 
-function update_cart($user, $item) {
-	$sql = "UPDATE inventory SET Cart = '$user' WHERE SKU = '$item'";
+
+function remove_cart($item) {
+	$sql = "DELETE FROM Orders WHERE SKU = '$item'";
 	$result = @mysql_query($sql);
 }
 
 function update_listings($user, $item, $price) {
-	$sql = "INSERT INTO orders (User_Name, SKU, Price) 
+	$sql = "INSERT INTO Orders (User_Name, SKU, Price) 
 			VALUES ('$user', '$item', '$price')";
 	$result = @mysql_query($sql);
-	$sql1 = "DELETE FROM inventory WHERE SKU = '$item'";
+	$sql1 = "DELETE FROM Inventory WHERE SKU = '$item'";
 	$result1 = @mysql($sql1);
 }
 
-function cart_total() {
-	$sql = "SELECT * FROM inventory WHERE ";
+function cart_total($user) {
+	$sql = "SELECT * FROM Orders";
+	$result = @mysql_query($sql);
+	$i = 0;
+	while($row = @mysql_fetch_array($result)) {
+		if($row['User_Name'] == $user){
+				$i += $row['Price'];
+			}
+		}
+		return $i;
 }
+
 
 
 

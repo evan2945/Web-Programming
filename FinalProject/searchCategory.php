@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	ini_set('session.cache_limiter','public');
+	session_cache_limiter(false);
 	include_once('utilities.php');
 	include('connection.php');
 	$keyword = $_GET['param1'];

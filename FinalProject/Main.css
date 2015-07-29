@@ -257,6 +257,12 @@ p {
     margin-top:23px
 }
 
+.right_sponsor_area h3 {
+    text-align: center;
+    padding-top:10px;
+    margin-top:10px;
+}
+
 .right_product_area_product_cart_faq {
     margin-bottom:10px;
     background:#fff;

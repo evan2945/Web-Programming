@@ -34,33 +34,10 @@
 		  	
 			 <div class="row sideMenu">
 			 	<div class="col-lg-12">
-			 		<?php
-						require 'connection.php';
-						
-						$user = $_POST['username'];
-					    $passwd = $_POST['password'];
-						$salt = '834qu@J*';
-						$token = md5($salt . $passwd);
-					    
-					    function Login($user, $token) {
-					        if(!empty($_POST['username'])){
-					            $query = mysql_query("SELECT * FROM Customers WHERE User_Name='$user' AND Password='$token'") or die(mysql_error());
-					            $row = mysql_fetch_array($query);
-					            if(!empty($row['User_Name'])){
-					            	$_SESSION['eid'] = $user;
-									$_SESSION['loggedin'] = true;
-									$_SESSION['name'] = $row['First_Name'];
-					                echo "<h2 class=regResult>Glad to have you back " . $row['First_Name'] . "! Enjoy your stay!</h2>";
-					            } else {
-					                echo "<h2 class=regResult>Oops! Your username/password was entered incorrectly! Try again</h2><br><br>";
-									echo "<h2 class=regResult>Not a member? <a href='Register.php' style='text-decoration: none';>Sign up</a> now!</h2>";
-					             }
-					        }
-					    }
-					    
-					    if(isset($_POST['signin'])){
-					        Login($user, $token);
-					    }
-					    
-					    mysql_close($conn);
-					?>
+			 		<h2 class="regResult">Your order has been submitted! Thanks for your purchase!</h2>	
+				</div>
+			</div>	
+				
+		<?php		
+			mysql_close($conn);
+		?>

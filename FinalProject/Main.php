@@ -1,5 +1,9 @@
 <?php
 	session_start();
+	ini_set('session.cache_limiter','public');
+	session_cache_limiter(false);
+	include('utilities.php');
+  	include('connection.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +28,8 @@
   
   <?php
 	  if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-	  	  include 'menu_authenticated.php';
+	  	  include_once('menu_authenticated.php');
+		  $user = $_SESSION['name'];
 	  } else {
 	  	  include 'menu_unauthenticated.php';
 	  }

@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	ini_set('session.cache_limiter','public');
+	session_cache_limiter(false);
 	include_once('utilities.php');
 	include('connection.php');
 	$keyword = fetch_get_var('search');
@@ -29,7 +31,8 @@
   
 <?php
 	  if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-	  	  include 'menu_authenticated.php';
+	  	  include_once('menu_authenticated.php');
+          $user = $_SESSION['name'];
 	  } else {
 	  	  include 'menu_unauthenticated.php';
 	  }

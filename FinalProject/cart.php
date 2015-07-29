@@ -29,33 +29,38 @@
 <?php
 	  if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
 	  	  include 'menu_authenticated.php';
-        $user = $_SESSION['name'];
+          $user = $_SESSION['eid'];
 	  } else {
 	  	  include 'menu_unauthenticated.php';
 	  }
-        $product = $_GET['chosen_product'];
-        echo "Return to previous search #: '$product'<br>";
-        echo  '<!--left side start here-->
+		    echo "Cart Items:<br>";
+		    echo 	'<!--left side start here-->
         
-              <section>
-            <div class="container">
-                <div class="row">
-                    <div class=" left_div_product">
-                        <div class=" left_div_product_inner_top">
-                            <div class=" left_div_small_inner border">
-                                <div class=" slider_div">';
-            return_product($user, $product);
-        echo '
-            </div></div></div>
-            <!--left side end here-->';
+        			<section>
+            		<div class="container">
+                	<div class="row">
+                	<div class="left_div">
+                	<div class="clearfix"></div>
+                	<div class="left_product_area">';
+		    		return_cart($user);
+		    echo '</div></div>
+		    		<!--left side end here-->';
 ?>
-
+		
+		
     <!--right side start here-->
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 right_div">
-           <div class="right_product_area">
+            <div class="right_product_area">
+                <div class="right_sponsor_area">
+                    <ul>
+                        <li><h3>Cart total:&nbsp; <b>$<?php echo cart_total($user); ?></b></h3></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right_product_area">
                 <div class="right_product_area_product_cart_faq">
                     <div class="right_product_area_product_cart_inner_faq">
-                      <center><img alt="" src="faq.jpg"></center>
+                    	<center><img alt="" src="faq.jpg"></center>
                         <div class="right_product_area_product_cart_inner_faq_text">
                             <h1><center>Need Assistance?</center></h1>
 
@@ -112,11 +117,11 @@
                 <div class="clearfix"></div>
                 <!--                        <div class="ad_area">
                                             </div>-->
-            </div>
+          	</div>
         </div>
     </div>
-  </section>
-    <!--right side end here-->
+	</section>
+		<!--right side end here-->
 
 </body>
 </html>
