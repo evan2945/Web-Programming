@@ -7,13 +7,12 @@
 		            <li class="dropdown">
 		              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop by Category <span class="caret"></span></a>
 		              <ul class="dropdown-menu">
+		              	<li><a href="searchCategory.php?param1=All">All Products</a></li>
 		                <li><a href="searchCategory.php?param1=Men">Men\'s Apparel</a></li>
 		                <li><a href="searchCategory.php?param1=Women">Women\'s Apparel</a></li>
 		                <li><a href="searchCategory.php?param1=Children">Children\'s Apparel</a></li>
 		                <li role="separator" class="divider"></li>
-		                <li><a href="#">Find Something Random!</a></li>
-		                <li role="separator" class="divider"></li>
-		                <li><a href="#">Finest Programmer Accessories!</a></li>
+		                <li><a href="searchCategory.php?param1=Accessories">Finest Programmer Accessories!</a></li>
 		              </ul>
 		            </li>
 		        </ul>
@@ -30,8 +29,6 @@
 		              <form method="post" accept-charset="UTF-8" id="userLogin">
 		                  <input id="username" style="margin-bottom: 15px;" type="text" name="username" size="30" placeholder="Username"/><br>
 		                  <input id="password" style="margin-bottom: 15px;" type="password" name="password" size="30" placeholder="Password"/><br>
-		                  <input id="user_remember_me" style="float: left; margin-right: 10px;" type="checkbox" name="remember_me" value="1" />
-		                  <label class="string optional" for="user_remember_me"> Remember me</label>
 		                 
 		                  <input class="btn btn-primary" formaction="login.php" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="signin" value="Sign In" />
 		                  <li role="separator" class="divider"></li>

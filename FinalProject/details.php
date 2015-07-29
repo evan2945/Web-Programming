@@ -29,7 +29,7 @@
 <?php
 	  if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
 	  	  include 'menu_authenticated.php';
-        $user = $_SESSION['name'];
+        /*$user = $_SESSION['name'];*/
 	  } else {
 	  	  include 'menu_unauthenticated.php';
 	  }
@@ -44,7 +44,7 @@
                         <div class=" left_div_product_inner_top">
                             <div class=" left_div_small_inner border">
                                 <div class=" slider_div">';
-            return_product($user, $product);
+            return_product($product);
         echo '
             </div></div></div>
             <!--left side end here-->';

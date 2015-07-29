@@ -1,14 +1,12 @@
 <?php
 	session_start();
-	ini_set('session.cache_limiter','public');
-	session_cache_limiter(false);
 	include('utilities.php');
   	include('connection.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Softwear</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -77,15 +75,12 @@
   <div class="row">
     <div class="col-lg-4 boxes" id="men">
       <h3>Men's</h3>
-      <p>This is just a place holder, we should think up around 3-4 lines of something funny to put here</p>
     </div>
     <div class="col-lg-4 boxes" id="women">
       <h3>Women's</h3>
-      <p>This is just a place holder, we should think up around 3-4 lines of something funny to put here</p>
     </div>
     <div class="col-lg-4 boxes" id="children">
       <h3>Children</h3>        
-      <p>This is just a place holder, we should think up around 3-4 lines of something funny to put here</p>
     </div>
   </div>
 </div>

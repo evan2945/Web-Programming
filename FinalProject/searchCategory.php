@@ -41,12 +41,12 @@
         
         			<section>
             		<div class="container">
-                	<div class="row">
-                	<div class=" left_div">
-                	<div class="clearfix"></div>
-                	<div class="left_product_area">';
-		    		return_products($search);
-		    echo '</div></div>
+                		<div class="row">
+                			<div class=" left_div">
+                				<div class="clearfix"></div>
+                					<div class="left_product_area">';
+		    							return_department($search);
+		    	echo '</div></div>
 		    		<!--left side end here-->';
 ?>
 

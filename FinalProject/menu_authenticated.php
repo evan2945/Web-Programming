@@ -20,13 +20,12 @@
 		            <li class="dropdown">
 		              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop by Category <span class="caret"></span></a>
 		              <ul class="dropdown-menu">
+		              	<li><a href="searchCategory.php?param1=All">All Products</a></li>
 		                <li><a href="searchCategory.php?param1=Men">Men\'s Apparel</a></li>
 		                <li><a href="searchCategory.php?param1=Women">Women\'s Apparel</a></li>
 		                <li><a href="searchCategory.php?param1=Children">Children\'s Apparel</a></li>
 		                <li role="separator" class="divider"></li>
-		                <li><a href="#">Find Something Random!</a></li>
-		                <li role="separator" class="divider"></li>
-		                <li><a href="#">Finest Programmer Accessories!</a></li>
+		                <li><a href="searchCategory.php?param1=Accessories">Finest Programmer Accessories!</a></li>
 		              </ul>
 		            </li>
 		        </ul>
@@ -37,7 +36,7 @@
 		      <ul class="nav navbar-nav navbar-right">
 		        <li><a href="Main.php">Home  <span class="glyphicon glyphicon-home" aria-hidden="true"></span> 
 		        <li><a href="cart.php">Cart  <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>  <span class="badge" id="loot">'.get_badge($_SESSION['eid']).'</span></a></li>
-		        <li><a href="#">Welcome '. $_SESSION['name'] . '!</a></li>
+		        <li><a href="profile.php">Welcome '. $_SESSION['name'] . '!</a></li>
 		        <li><a href="logout.php">Log Out</a></li>
 		      </ul>
 		    </div>
